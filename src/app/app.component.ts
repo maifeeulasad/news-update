@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {NewsElementComponent} from "./component/news-element/news-element.component";
 import {INewsElement} from "./model/INewsElement";
+import {RedditNewsService} from "./service/reddit-news.service";
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,7 @@ export class AppComponent {
 
   newsElements: INewsElement[]
 
-  constructor() {
+  constructor(private newsService: RedditNewsService) {
     this.newsElements=[
       {
         url:'a',
@@ -22,6 +23,10 @@ export class AppComponent {
         url:'b',
         title:'b',
       }
-    ]
+    ];
+    newsService.getAll().subscribe(res=>{
+      console.debug("res")
+      console.debug(res)
+    })
   }
 }
