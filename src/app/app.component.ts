@@ -11,21 +11,11 @@ import {RedditNewsService} from "./service/reddit-news.service";
 export class AppComponent {
   title = 'news-update';
 
-  newsElements: INewsElement[]
+  newsElements: INewsElement[] = []
 
   constructor(private newsService: RedditNewsService) {
-    this.newsElements=[
-      {
-        url:'a',
-        title:'a',
-      },
-      {
-        url:'b',
-        title:'b',
-      }
-    ];
     newsService.getAll().subscribe(res=>{
-      console.debug("res")
+      this.newsElements=res
       console.debug(res)
     })
   }

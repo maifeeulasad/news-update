@@ -12,7 +12,7 @@ export class RedditNewsService {
 
   }
 
-  getAll(): Observable<INewsElement> {
+  getAll(): Observable<INewsElement[]> {
     return this
       .http
       .get<any>("https://www.reddit.com/r/news/top.json")
@@ -20,7 +20,7 @@ export class RedditNewsService {
         return res.data.children.map((data:any)=>{
           return {
             title:data.data.title,
-            url:data.url_overridden_by_dest
+            url:data.data.url
           }
         })
       }))
