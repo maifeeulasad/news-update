@@ -4,6 +4,8 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from './app.component';
 import { NewsElementComponent } from './component/news-element/news-element.component';
+import { MatLinkPreviewModule } from '@angular-material-extensions/link-preview';
+
 
 @NgModule({
   declarations: [
@@ -13,6 +15,7 @@ import { NewsElementComponent } from './component/news-element/news-element.comp
   imports: [
     BrowserModule,
     HttpClientModule,
+    MatLinkPreviewModule
   ],
   providers: [],
   bootstrap: [AppComponent]
