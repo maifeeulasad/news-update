@@ -19,9 +19,12 @@ jobs:
 
     - name: Installing Deps
       run: npm install
+      
+    - name: Test
+      run: npm test
 
     - name: Build
-      run: npm run build:prod
+      run: npm run build
 
     - name: Deploy GH Page
       if: success()
