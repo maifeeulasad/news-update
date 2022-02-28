@@ -2,7 +2,7 @@ name: GH Page CI/CD
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull_request:
     branches: [ main ]
 
@@ -24,9 +24,9 @@ jobs:
     - name: 'Installing deps'    
       run: npm i
     - name: 'Build'
-      run: npm build
+      run: npm run build
     - name: 'Deploy'
       uses: peaceiris/actions-gh-pages@v3
       with:
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        publish_dir: dist
+        publish_dir: ./dist
