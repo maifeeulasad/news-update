@@ -5,5 +5,6 @@
     It uses Reddit API.
     Explicitly shows post(s) from r/news
   </p>
+  <mat-progress-spinner *ngIf="newsService.loading"></mat-progress-spinner>
   <app-news-element *ngFor="let newsElement of newsElements" [newsElement]="newsElement"></app-news-element>
 </div>

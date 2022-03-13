@@ -4,6 +4,7 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from './app.component';
 import { NewsElementComponent } from './component/news-element/news-element.component';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { NewsElementComponent } from './component/news-element/news-element.comp
   imports: [
     BrowserModule,
     HttpClientModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
