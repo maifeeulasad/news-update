@@ -1,5 +1,9 @@
 <nz-card nzHoverable style="width:100%; margin:8px" [nzCover]="coverTemplate">
-  <nz-card-meta nzTitle={{newsElement.title}} nzDescription={{newsElement.url}}></nz-card-meta>
+  <nz-card-meta nzTitle={{newsElement.title}} nzDescription={{newsElement.url}}>
+    <nz-anchor>
+      <nz-link nzHref={{newsElement.url}} nzTitle={{newsElement.title}}></nz-link>
+    </nz-anchor>
+  </nz-card-meta>
 </nz-card>
 <ng-template #coverTemplate>
   <img alt="preview-{{newsElement.title}}" src={{newsElement.url}} />
