@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {INewsElement} from "../../model/INewsElement";
 
@@ -7,18 +8,18 @@ import {INewsElement} from "../../model/INewsElement";
   styleUrls: ['./news-element.component.css'],
   inputs: ['newsElement']
 })
-export class NewsElementComponent implements OnInit {
+export class NewsElementComponent {
 
   newsElement: INewsElement
-
-  constructor() {
+  
+  constructor(private http: HttpClient ) {
     this.newsElement = {
       title:'',
       url:''
     }
   }
 
-  ngOnInit(): void {
-  }
-
+  apiCallbackFn = (route: string) => {
+    return this.http.get(route);
+  };
 }

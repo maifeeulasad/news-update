@@ -8,3 +8,5 @@
 <ng-template #coverTemplate>
   <img alt="preview-{{newsElement.title}}" src={{newsElement.url}} />
 </ng-template>
+
+<ngx-link-preview [apiRoute]="'{{newsElement.url}}'" [getApiEndpoint]="{{newsElement.apiCallbackFn}}"></ngx-link-preview>
