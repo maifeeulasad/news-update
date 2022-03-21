@@ -1,8 +1,6 @@
-<div class="card">
-  <div>
-    <h2>
-      {{newsElement.title}}
-    </h2>
-  </div>
-  <a href={{newsElement.url}}>Source</a>
-</div>
+<nz-card nzHoverable style="width:240px" [nzCover]="coverTemplate">
+  <nz-card-meta nzTitle={{newsElement.title}} nzDescription={{newsElement.url}}></nz-card-meta>
+</nz-card>
+<ng-template #coverTemplate>
+  <img alt="preview-{{newsElement.title}}" src={{newsElement.url}} />
+</ng-template>
