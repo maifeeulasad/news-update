@@ -4,5 +4,7 @@
       {{newsElement.title}}
     </h2>
   </div>
-  <a href={{newsElement.url}}>Source</a>
+  <mat-link-preview-container color="primary" [multiple]="true">
+    <a href={{newsElement.url}}>Source</a>
+  </mat-link-preview-container>
 </div>
