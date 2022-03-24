@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {INewsElement} from "../../model/INewsElement";
+import * as htmlMetadataParser from 'html-metadata-parser'
+
 
 @Component({
   selector: 'app-news-element',
@@ -19,6 +21,11 @@ export class NewsElementComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    htmlMetadataParser.parse(this.newsElement.url).then(({og}) => {
+      const {description, image} = og;
+      this.newsElement.description = description;
+      this.newsElement.image = image;
+    })
   }
 
 }
