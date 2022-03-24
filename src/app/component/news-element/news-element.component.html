@@ -1,10 +1,10 @@
-<nz-card nzHoverable style="width:100%; margin:8px" [nzCover]="coverTemplate">
+<nz-card nzHoverable style="width:100%; margin:8px" [nzCover]="thumbnail">
   <nz-card-meta nzTitle={{newsElement.title}} nzDescription={{newsElement.url}}>
     <nz-anchor>
       <nz-link nzHref={{newsElement.url}} nzTitle={{newsElement.title}}></nz-link>
     </nz-anchor>
   </nz-card-meta>
 </nz-card>
-<ng-template #coverTemplate>
+<ng-template #thumbnail>
   <img alt="preview-{{newsElement.title}}" src={{newsElement.image}} />
 </ng-template>
