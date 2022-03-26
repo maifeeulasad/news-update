@@ -15,6 +15,7 @@ export class RedditNewsService {
   getAll(): Observable<INewsElement[]> {
     return this
       .http
+      //.get<any>("https://www.reddit.com/r/news/top.json?limit=100")
       .get<any>("https://www.reddit.com/r/news/top.json")
       .pipe(map((res: any) => {
         return res.data.children.map((data:any)=>{
