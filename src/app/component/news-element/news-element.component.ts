@@ -25,6 +25,8 @@ export class NewsElementComponent implements OnInit {
       const {description, image} = og;
       this.newsElement.description = description;
       this.newsElement.image = image;
+    }).catch(()=>{
+      this.newsElement.image = './assets/news.jpg';
     })
   }
 
