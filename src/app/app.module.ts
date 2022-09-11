@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NewsElementComponent } from './component/news-element/news-element.component';
@@ -16,19 +16,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 registerLocaleData(en);
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NewsElementComponent,
-  ],
+  declarations: [AppComponent, NewsElementComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
     NzCardModule,
-    NzAnchorModule
+    NzAnchorModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
