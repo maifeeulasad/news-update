@@ -12,11 +12,12 @@ import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NewsRowComponent } from './news-row/news-row.component';
 
 registerLocaleData(en);
 
 @NgModule({
-  declarations: [AppComponent, NewsElementComponent],
+  declarations: [AppComponent, NewsElementComponent, NewsRowComponent],
   imports: [
     BrowserModule,
     HttpClientModule,

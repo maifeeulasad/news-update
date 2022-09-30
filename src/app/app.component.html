@@ -7,7 +7,9 @@
     It uses Reddit API. Explicitly shows post(s) from r/news
   </h4>
 </div>
-<app-news-element
-  *ngFor="let newsElement of newsElements"
-  [newsElement]="newsElement"
-></app-news-element>
+<div class="horizontal">
+  <app-news-element
+    *ngFor="let newsElement of newsElements; let i = index"
+    [newsElement]="newsElement"
+  ></app-news-element>
+</div>
