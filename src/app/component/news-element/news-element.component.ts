@@ -29,9 +29,10 @@ export class NewsElementComponent implements OnInit {
   }
 
   fetchOg(): Promise<IOg> {
+    const url = this.newsElement.url;
     return new Promise((resolve) => {
       htmlMetadataParser
-        .parse(this.newsElement.url)
+        .parse(url)
         .then(({ og }: { og: IOg }) => {
           resolve(og);
         })
@@ -40,7 +41,7 @@ export class NewsElementComponent implements OnInit {
             .parse('https://proxy-server-mua.herokuapp.com/proxy', {
               method: 'POST',
               data: {
-                url: this.newsElement.url,
+                url,
               },
             })
             .then(({ og }: { og: IOg }) => {
