@@ -9,6 +9,7 @@ import { RedditNewsService } from './service/reddit-news.service';
 })
 export class AppComponent {
   title = 'news-update';
+  console = console;
 
   newsElements: INewsElement[] = [];
 
