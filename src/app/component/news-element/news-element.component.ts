@@ -19,6 +19,7 @@ export class NewsElementComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.newsElement.image = './assets/loading.gif';
     htmlMetadataParser
       .parse(this.newsElement.url)
       .then(({ og }) => {
