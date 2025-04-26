@@ -8,17 +8,8 @@
   </h4>
 </div>
 
-<div *ngFor="let item of newsElements; let i = index">
-  <div nz-row *ngIf="i % 3 === 0" style="justify-content: center; align-items: center;">
-    {{ console.debug(i) }}
-    <div nz-col nzSpan="8" *ngIf="i + 0 < newsElements.length">
-      <app-news-element [newsElement]="newsElements[i]"></app-news-element>
-    </div>
-    <div nz-col nzSpan="8" *ngIf="i + 1 < newsElements.length">
-      <app-news-element [newsElement]="newsElements[i + 1]"></app-news-element>
-    </div>
-    <div nz-col nzSpan="8" *ngIf="i + 2 < newsElements.length">
-      <app-news-element [newsElement]="newsElements[i + 2]"></app-news-element>
-    </div>
+<ngx-masonry [options]="masonryOptions">
+  <div ngxMasonryItem class="masonry-item" *ngFor="let newsElement of newsElements">
+    <app-news-element [newsElement]="newsElement"></app-news-element>
   </div>
-</div>
+</ngx-masonry>
