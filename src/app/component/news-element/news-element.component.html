@@ -1,16 +1,13 @@
-<nz-card nzHoverable style="margin: 8px" [nzCover]="thumbnail">
-  <nz-card-meta
-    nzTitle="{{ newsElement.title }}"
-    nzDescription="{{ newsElement.url }}"
-  >
-    <nz-anchor>
-      <nz-link
-        nzHref="{{ newsElement.url }}"
-        nzTitle="{{ newsElement.title }}"
-      ></nz-link>
-    </nz-anchor>
-  </nz-card-meta>
-</nz-card>
+<a [href]="newsElement.url" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+  <nz-card nzHoverable style="margin: 8px" [nzCover]="thumbnail">
+    <nz-card-meta
+      nzTitle="{{ newsElement.title }}"
+      nzDescription="{{ newsElement.url }}"
+    >
+    </nz-card-meta>
+  </nz-card>
+</a>
+
 <ng-template #thumbnail>
   <img alt="preview-{{ newsElement.title }}" src="{{ newsElement.image }}" />
 </ng-template>
