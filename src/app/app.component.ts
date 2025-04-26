@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgxMasonryOptions } from 'ngx-masonry';
 import { INewsElement } from './model/INewsElement';
 import { RedditNewsService } from './service/reddit-news.service';
 
@@ -12,6 +13,11 @@ export class AppComponent {
   console = console;
 
   newsElements: INewsElement[] = [];
+
+  masonryOptions: NgxMasonryOptions = {
+    gutter: 16,
+    fitWidth: true,
+  };
 
   constructor(private newsService: RedditNewsService) {
     newsService.getAll().subscribe((res) => {
