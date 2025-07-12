@@ -12,6 +12,7 @@ interface IOg {
   templateUrl: './news-element.component.html',
   styleUrls: ['./news-element.component.css'],
   inputs: ['newsElement'],
+  standalone: false,
 })
 export class NewsElementComponent implements OnInit {
   newsElement: INewsElement;
